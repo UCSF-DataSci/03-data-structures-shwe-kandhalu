@@ -34,4 +34,4 @@ if __name__ == "__main__":
     print(get_quote_of_the_day(quotes))
 
 # Cron job (add this to your crontab):
-# 0 8 * * * /usr/bin/python3 /path/to/quote_generator.py >> /path/to/daily_quote.txt
+#0 8 * * * /workspaces/03-data-structures-shwe-kandhalu/01-daily_quote.py >> /workspaces/03-data-structures-shwe-kandhalu/01-daily_quote.txt
