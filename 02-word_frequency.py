@@ -18,12 +18,33 @@ Hints:
 """
 
 import sys
+import string
 
 def word_frequency(text):
     frequencies = {} # Dictionary to store word frequencies
 
     # Your code here
+    text_clean = [] # empty array for text after cleaned
     
+    # replace all new lines with a space
+    text = text.replace("\n", " ")
+
+    # replace all punctuation with a space
+    text = text.replace(",", " ")
+    text = text.replace("?", " ")
+    text = text.replace(".", " ")
+    text = text.replace(":", " ")
+    text = text.replace('"', " ")
+    text = text.replace("'"," ")
+    text = text.replace("_", " ")
+    text = text.replace("-", " ")
+    text = text.replace("!", " ")
+    text = text.replace("[", " ")
+    text = text.replace("]", " ")
+    text = text.replace(";", " ")
+    text = text.replace("(", " ")
+    text = text.replace(")", " ")
+
     return frequencies
 
 # Scaffold for opening a file and running word_frequency() on the contents
