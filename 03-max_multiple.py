@@ -37,37 +37,17 @@ THOUSAND_DIGIT_NUMBER = """
 71636269561882670428252483600823257530420752963450
 """.replace("\n", "")
 
-"""
 def find_greatest_product(number_string, adjacent_digits=13):
     max_product = 0
     
-    # Your code here
-
-    return max_product
-
-if __name__ == "__main__":
-    result = find_greatest_product(THOUSAND_DIGIT_NUMBER)
-    print(f"The greatest product of 13 adjacent digits is: {result}")
-"""
-
-
-def find_greatest_product(number_string, adjacent_digits=13):
-    max_product = 0
-    num_digits = len(number_string)
-    
-    # Iterate through the string with a window of 'adjacent_digits' length
-    for i in range(num_digits - adjacent_digits + 1):
-        # Take a slice of 'adjacent_digits' from the string
-        digits_slice = number_string[i:i + adjacent_digits]
+    for i in range(len(number_string) - adjacent_digits + 1):
+        slice = number_string[i:i + adjacent_digits]
         
-        # Convert each character in the slice to an integer and calculate the product
         product = 1
-        for digit in digits_slice:
-            product *= int(digit)
-        
-        # Update max_product if the current product is larger
-        if product > max_product:
-            max_product = product
+        for i in slice:
+            product *= int(i)
+
+        max_product = max(max_product, product)
     
     return max_product
 
